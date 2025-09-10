@@ -1,0 +1,1 @@
+module.exports = function(eleventyConfig) {\n  eleventyConfig.addPassthroughCopy("css");\n  eleventyConfig.addPassthroughCopy("icons");\n  eleventyConfig.addPassthroughCopy("favicon.ico");\n  eleventyConfig.addPassthroughCopy("preview.png");\n  return {\n    dir: { input: ".", includes: "_includes", data: "_data", output: "_site" }\n  };\n};\n
