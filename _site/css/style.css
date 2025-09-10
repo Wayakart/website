@@ -67,6 +67,23 @@ a:hover {
   fill: white;
 }
 
+/* Brand logo centered at top */
+.brand-center {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-center img { width: 48px; height: 48px; border-radius: 12px; object-fit: cover; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0; }
+
 /* ==== MAIN MENU ==== */
 
 .main-menu {
@@ -278,7 +295,7 @@ a:hover {
 
 /* Page wrapper offset below fixed menus */
 .portfolio-section { max-width: 960px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
-.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(960px, 100% - 2rem); z-index: 950; }
 .portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 .portfolio-header {
@@ -314,6 +331,9 @@ a:hover {
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 16px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 640px) {
@@ -347,5 +367,5 @@ a:hover {
 }
 
 /* Fixed toolbar and scroll area for Portfolio */
-.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(960px, 100% - 2rem); z-index: 950; }
 .portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
