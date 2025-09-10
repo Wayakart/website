@@ -7,11 +7,10 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block; /* normal flow so content scrolls */
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 
@@ -265,3 +264,81 @@ a:hover {
   height: 100%;
   border: 0;
 }
+
+/* ===== Portfolio Page ===== */
+/* Utility */
+.hidden { display: none !important; }
+
+/* Page wrapper offset below fixed menus */
+.portfolio-section { max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+.portfolio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-filters a {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #a6dbe7;
+  color: #222;
+  background: rgba(166, 219, 231, 0.2);
+}
+
+.portfolio-filters a[aria-pressed="true"] {
+  background: #a6dbe7;
+  color: #333;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.portfolio-card iframe,
+.portfolio-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border: 0;
+}
+
+.portfolio-card .card-body { padding: 14px 16px; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Fixed toolbar and scroll area for Portfolio */
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }

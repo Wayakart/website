@@ -1,0 +1,90 @@
+---
+layout: layout.njk
+title: Wayak — Portfolio
+---
+
+<main>
+  <section class="portfolio-section">
+    <div class="portfolio-toolbar">
+      <nav class="portfolio-filters" aria-label="Filter portfolio">
+        <a href="#" data-filter="all" aria-pressed="true">All</a>
+        <a href="#" data-filter="music">Music</a>
+        <a href="#" data-filter="visuals">Visuals</a>
+        <a href="#" data-filter="video">Video</a>
+      </nav>
+    </div>
+
+    <div class="portfolio-scroll">
+    <section id="portfolio" class="portfolio-grid">
+      <article class="portfolio-card" data-kind="music">
+        <iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <div class="card-body">
+          <small class="tag">Music</small>
+          <h3>In Between Dreams — Album</h3>
+          <p>Spotify embed. Replace URL with your album/playlist.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" data-kind="visuals">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Visual artwork preview">
+        <div class="card-body">
+          <small class="tag">Visuals</small>
+          <h3>Aura — Concept Art</h3>
+          <p>High‑res still. Link to a gallery or case study.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" data-kind="video">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video"></iframe>
+        <div class="card-body">
+          <small class="tag">Video</small>
+          <h3>Eternal Eyes — Short</h3>
+          <p>Replace with your YouTube/Vimeo link.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" data-kind="visuals">
+        <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?q=80&w=1200&auto=format&fit=crop" alt="Visual artwork preview 2">
+        <div class="card-body">
+          <small class="tag">Visuals</small>
+          <h3>Aura Cat — Poster</h3>
+          <p>Poster design series.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" data-kind="music">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1200&auto=format&fit=crop" alt="Music cover art">
+        <div class="card-body">
+          <small class="tag">Music</small>
+          <h3>Aura (Single)</h3>
+          <p>Bandcamp/Apple Music link in details page.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" data-kind="video">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop" alt="Video thumbnail">
+        <div class="card-body">
+          <small class="tag">Video</small>
+          <h3>Gen‑48 Reel</h3>
+          <p>Runway Gen‑48 submission highlight.</p>
+        </div>
+      </article>
+    </section>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Filter logic (anchors act like chips)
+  const chipLinks = document.querySelectorAll('.portfolio-filters a');
+  const cards = document.querySelectorAll('#portfolio [data-kind]');
+  function setActive(target){ chipLinks.forEach(c => c.setAttribute('aria-pressed', c === target)); }
+  function filter(kind){ cards.forEach(card => card.classList.toggle('hidden', kind !== 'all' && card.dataset.kind !== kind)); }
+  chipLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActive(link);
+      filter(link.dataset.filter);
+    });
+  });
+</script>
