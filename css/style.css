@@ -278,7 +278,7 @@ a:hover {
 
 /* Page wrapper offset below fixed menus */
 .portfolio-section { max-width: 960px; margin-left: auto; margin-right: auto; padding: 0 1rem; }
-.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(960px, 100% - 2rem); z-index: 950; }
 .portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 
 .portfolio-header {
@@ -314,6 +314,9 @@ a:hover {
   grid-template-columns: 1fr;
   gap: 16px;
   margin-top: 16px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 640px) {
@@ -347,5 +350,5 @@ a:hover {
 }
 
 /* Fixed toolbar and scroll area for Portfolio */
-.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(1200px, 100% - 2rem); z-index: 950; }
+.portfolio-toolbar { position: fixed; top: 6rem; left: 50%; transform: translateX(-50%); width: min(960px, 100% - 2rem); z-index: 950; }
 .portfolio-scroll { position: fixed; left: 0; right: 0; top: 9rem; bottom: 5rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
